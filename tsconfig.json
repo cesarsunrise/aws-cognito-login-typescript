@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "module":"CommonJS",
+    "esModuleInterop": true, 
+    "target": "ES2022",
+    "noImplicitAny": true,
+    "moduleResolution":"node",
+    "sourceMap": false,
+    "strict": true,
+    "outDir": "./build",
+    "rootDir": "./src",
+    "baseUrl": ".",
+    "importHelpers": true,
+    "paths": {
+      "*": [
+        "node_modules/*"
+      ]
+    },
+    "preserveConstEnums": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true, 
+    "isolatedModules": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "**/*.spec.ts", "**/tests/*", "**/*.test.tsx?", "**/*.stories.ts", "**/*.mock.ts"]
+}
