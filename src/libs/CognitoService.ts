@@ -14,7 +14,7 @@ import {
   SignUpResponse,
 } from "aws-sdk/clients/cognitoidentityserviceprovider";
 import crypto from "crypto";
-import Config from "../config/Config";
+import EnvManager from "../config/EnvManager";
 
 class Cognito {
   clientId: string;
@@ -23,13 +23,13 @@ class Cognito {
   cognitoIdentity: CognitoIdentityServiceProvider;
 
   constructor() {
-    this.clientId = Config.getCognitoClientId();
-    this.clientSecret = Config.getCognitoClientSecret();
-    this.poolId = Config.getCognitoPoolId();
+    this.clientId = EnvManager.getCognitoClientId();
+    this.clientSecret = EnvManager.getCognitoClientSecret();
+    this.poolId = EnvManager.getCognitoPoolId();
 
     const cognitoParams: ClientConfiguration = {
-      apiVersion: Config.getCognitoApiVersion(),
-      region: Config.getCognitoRegion(),
+      apiVersion: EnvManager.getCognitoApiVersion(),
+      region: EnvManager.getCognitoRegion(),
     };
 
     this.cognitoIdentity = new AWS.CognitoIdentityServiceProvider(
