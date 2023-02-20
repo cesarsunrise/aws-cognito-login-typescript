@@ -1,24 +1,16 @@
 {
-  "name": "brave-trails-login-lambda",
+  "name": "cognito-login-lambda",
   "version": "1.0.0",
-  "description": "Brave Trails Login Lambda",
+  "description": "Cognito Login Lambda",
   "main": "index.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development nodemon src/index.ts --watch ./src",
     "build": "tsc -p tsconfig.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Sunrise-Integration/brave-trails-login-lambda.git"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Sunrise-Integration/brave-trails-login-lambda/issues"
-  },
-  "homepage": "https://github.com/Sunrise-Integration/brave-trails-login-lambda#readme",
   "dependencies": {
     "@hapi/joi": "^17.1.1",
     "axios": "^1.3.3",

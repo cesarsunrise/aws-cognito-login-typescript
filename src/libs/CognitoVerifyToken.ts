@@ -69,15 +69,15 @@ class CognitoVerifyToken {
         currentSeconds > decodedJwt.payload.exp ||
         currentSeconds < decodedJwt.auth_time
       ) {
-        throw new Error("claim is expired or invalid");
+        throw new Error("JWT is expired or invalid");
       }
 
       if (decodedJwt.payload.iss !== this.cognitoIssuer) {
-        throw new Error("claim issuer is invalid");
+        throw new Error("Claim issuer is invalid");
       }
 
       if (decodedJwt.payload.token_use !== "access") {
-        throw new Error("claim use is not access");
+        throw new Error("Claim use is not access");
       }
 
       const payload = jwt.verify(token, pem) as DecodePayload;
