@@ -60,7 +60,7 @@ class CognitoVerifyToken {
       const pem = pems[kid];
 
       if (!pem) {
-        throw new Error("requested pem invalid");
+        throw new Error("Requested pem invalid.");
       }
 
       const currentSeconds = Math.floor(new Date().getTime() / 1000);
@@ -69,15 +69,15 @@ class CognitoVerifyToken {
         currentSeconds > decodedJwt.payload.exp ||
         currentSeconds < decodedJwt.auth_time
       ) {
-        throw new Error("JWT is expired or invalid");
+        throw new Error("JWT is expired or invalid.");
       }
 
       if (decodedJwt.payload.iss !== this.cognitoIssuer) {
-        throw new Error("Claim issuer is invalid");
+        throw new Error("Claim issuer is invalid.");
       }
 
       if (decodedJwt.payload.token_use !== "access") {
-        throw new Error("Claim use is not access");
+        throw new Error("Claim use is not access.");
       }
 
       const payload = jwt.verify(token, pem) as DecodePayload;
@@ -103,13 +103,13 @@ class CognitoVerifyToken {
 
   private static async getPublicKeys() {
     if (!this.userPoolId || !this.poolRegion) {
-      throw new Error("env var required for cognito pool and cognito region");
+      throw new Error("Env var required for cognito pool and cognito region.");
     }
 
     try {
       const response = await Axios.get(this.url);
       if (response.status !== 200) {
-        throw "request not successful";
+        throw "Request not successful.";
       }
       const { data } = response;
       const { keys } = data;
@@ -123,7 +123,7 @@ class CognitoVerifyToken {
         pems[key_id] = pem;
       }
     } catch (error) {
-      throw "Error! Unable to download JWKs";
+      throw "Error! Unable to download JWKs.";
     }
   }
 }
