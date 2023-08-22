@@ -16,11 +16,20 @@
         "node_modules/*"
       ]
     },
+    "composite": true,
     "preserveConstEnums": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true, 
     "isolatedModules": true
   },
-  "include": ["src/**/*"],
+  "files": [
+    "./src/index.ts"
+  ],
+  "references": [
+    {
+      "path": "./src/packages/validatorHelper"
+    }
+  ],
+  "include": ["./src/**/*"],
   "exclude": ["node_modules", "**/*.spec.ts", "**/tests/*", "**/*.test.tsx?", "**/*.stories.ts", "**/*.mock.ts"]
 }

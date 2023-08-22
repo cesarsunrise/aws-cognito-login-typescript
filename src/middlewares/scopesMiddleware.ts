@@ -12,7 +12,7 @@ export const scopesMiddleware = (
 
   const permissions: any = {
     "/api/orders": {
-      GET: ["shopify_api/orders.read"],
+      GET: ["shopify_api/orders.read", "full"],
       POST: ["shopify_api/orders.write"],
     },
   };

@@ -1,5 +1,5 @@
 import jwkToPem from "jwk-to-pem";
-import jwt, { Jwt } from "jsonwebtoken";
+import jwt from "jsonwebtoken";
 import Axios from "axios";
 import EnvManager from "../config/EnvManager";
 

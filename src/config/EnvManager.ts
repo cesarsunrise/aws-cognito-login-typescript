@@ -39,7 +39,7 @@ class EnvManager {
       state: state || "123456",
     };
 
-    let loginUrl = `${this.getCognitoDomain()}/login`;
+    let loginUrl = `${this.getCognitoDomain()}/authorize`;
 
     let query = "?";
     for (const [key, value] of Object.entries(queryParams)) {
@@ -49,6 +49,10 @@ class EnvManager {
     loginUrl += query.slice(0, -1);
     return loginUrl;
   };
+
+  static getSalesForceEnv(): string {
+    return process.env.SALES_FORCE_ENV || "stage";
+  }
 }
 
 export default EnvManager;

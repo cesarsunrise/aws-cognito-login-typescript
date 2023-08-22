@@ -1,0 +1,23 @@
+{
+  "name": "@sunrise/validatorhelper",
+  "version": "1.0.0",
+  "main": "bin/index.js",
+  "scripts": {
+    "compile": "tsc -b",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "types": "./bin/index.d.ts",
+  "bin": {
+    "validatorhelper": "bin/index.js"
+  },
+  "devDependencies": {},
+  "description": "",
+  "dependencies": {
+    "@aws-sdk/rds-signer": "^3.276.0",
+    "aws-sdk": "^2.1320.0",
+    "mysql2": "^3.1.2",
+    "sequelize": "^6.28.0"
+  }
+}

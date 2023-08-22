@@ -18,7 +18,7 @@ app.get("/health", (req: Request, res: Response) => {
   res.send("ok");
 });
 
-app.use("/api", api);
+app.use(api);
 
 app.use(notFoundMiddleware);
 app.use(catchAllErrorMiddleware);
